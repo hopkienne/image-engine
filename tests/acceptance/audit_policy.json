@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "policyId": "G1-INDEPENDENT-AUDIT-v1",
+  "approvalStatus": "PROPOSED",
+  "approvedBy": null,
+  "approvedAt": null,
+  "seed": 20260930,
+  "frozenBeforeFirstRun": true,
+  "frozenAtUtc": "2026-09-30T00:00:00Z",
+  "coreRequired": [
+    "AUD-001", "AUD-002", "AUD-003", "AUD-004", "AUD-005", "AUD-006",
+    "AUD-007", "AUD-008", "AUD-009", "AUD-010", "AUD-011", "AUD-013",
+    "AUD-014", "AUD-015", "AUD-016", "AUD-018", "AUD-022", "AUD-023",
+    "AUD-024", "AUD-025", "AUD-026", "AUD-027", "AUD-029", "AUD-030",
+    "AUD-032", "AUD-033", "AUD-035", "AUD-039", "AUD-040"
+  ],
+  "conditionalRequired": ["AUD-019", "AUD-020", "AUD-021", "AUD-031"],
+  "conditionalApplicability": {
+    "AUD-019": "REQUIRED: engine accepts geometry.crop/rotationQuarterTurns/flipHorizontal in recipes and is advertised in README",
+    "AUD-020": "REQUIRED: engine accepts output.longEdge resize and is advertised",
+    "AUD-021": "REQUIRED: pe_render_preview + pe_export_jpeg both advertised in the C ABI",
+    "AUD-031": "REQUIRED: pe_cancel_* is part of the published C ABI"
+  },
+  "notApplicable": {
+    "AUD-012": "No valid synthetic DNG pair is in scope and the engine does not claim DNG-thumbnail-capability testing; real-camera fixtures are used instead (AUD-011/016). Capability remains unclaimed.",
+    "AUD-028": "Engine writes no camera EXIF at all (only JFIF+ICC+minimal EXIF with Orientation/ColorSpace/Software); there is no GPS/serial stripping feature to conformance-test. Documented limitation, not a passed check."
+  },
+  "notRun": {
+    "AUD-034": "Coverage-guided fuzzing requires a libFuzzer-capable toolchain; current MinGW host has none. Budget also not allocated."
+  },
+  "diagnostic": ["AUD-017", "AUD-036", "AUD-037", "AUD-038"],
+  "fixtureIds": ["d7000-compressed-12bit", "d3200-lossless-12bit-stored"],
+  "oracle": {
+    "reference": "RAW_Engine_Independent_Audit_v1/reference/oracle.py",
+    "referenceSha256Policy": "pinned at run time from environment.json; must equal the copy shipped under tests/acceptance/oracle/",
+    "accelerator": "numpy float64 vectorization of the same closed-form formulas, cross-checked against the reference comparator on a random sample of >=200000 pixels per compared case; accelerator/reference mismatch is a FAIL",
+    "engineImportForbidden": true
+  },
+  "lookFixtures": {
+    "source": "RAW_Engine_Independent_Audit_v1/reference/generated_looks_17",
+    "dimension": 17,
+    "kinds": ["identity", "permute", "constant", "affine", "multiaffine", "squaregrid"],
+    "integrityRule": "assetSha256 and manifestSha256 re-verified against index.json before use; tampering fails the run"
+  },
+  "thresholds": {
+    "identityPermutationConstant": {"maxAbsoluteError": 1e-06, "relativeTolerance": 0},
+    "affineMultiaffineSquaregridAmount": {"maxAbsoluteError": 1e-06, "relativeTolerance": 0},
+    "transferComposition": {"maxAbsoluteError": 2e-06, "relativeTolerance": 0},
+    "linearExposureUnit": {"absoluteTolerance": 2e-06, "relativeTolerance": 1e-06},
+    "wbScaleInvariance": {"hypothesisMaxLsb": 1, "note": "1/65535 screening hypothesis per test plan; failure triggers investigation, not threshold relaxation"},
+    "iccXYZProbe": {"maxAbsoluteComponentError": 0.0002, "normalizedYwhite": 1.0},
+    "jpegFlatPatch": {"maxAbsoluteChannelError": 0.00784313725490196, "quality": 100, "subsampling": "444"},
+    "geometry": {"comparison": "exact-mapping-and-dimensions; pixel values through transferComposition tolerance"},
+    "nonFinite": {"allowedCount": 0}
+  },
+  "frozenConventions": {
+    "cropPixelMapping": "left=llround(left*W), top=llround(top*H), width=max(1,llround(w*W)), height=max(1,llround(h*H)), clamped inside the image; PROPOSED convention (docs specify normalized crop only), pending Tech Lead review",
+    "rotation": "rotationQuarterTurns is clockwise; engine mapping validated by hand-computed unit matrices",
+    "orientationNormalize": "dcraw flip bitmask: bit4 transpose, then bit2 vertical mirror, then bit1 horizontal mirror (matches LibRaw flip_image order)",
+    "downscale": "area-average box filter, FP64 accumulators; AUD-020 required case uses an exact 2x factor where every implementation-defined choice is irrelevant"
+  },
+  "runnerExitCodes": {
+    "0": "every effective-required case has status PASS",
+    "1": "at least one FAIL anywhere",
+    "2": "no FAIL but at least one effective-required case is BLOCKED or NOT_RUN (or reports are missing/incomplete)"
+  },
+  "limits": {
+    "caseTimeoutSeconds": 900,
+    "maxProcessMemoryBytes": 4000000000,
+    "checkpointDiskBudgetBytes": 6000000000,
+    "note": "checkpoint dumps (~1 GB per full-res render) are deleted per case after comparison; only metrics and small samples are retained"
+  },
+  "engineEvidenceStatus": "NOT_RUN",
+  "notes": [
+    "Policy frozen before first engine run; effective-required list must not shrink afterwards.",
+    "Approval remains PROPOSED: executing tests does not approve the policy or the engine.",
+    "Engine contains two TEST-ONLY observability hooks used by this audit (B0..B4 checkpoint dumps via --audit-checkpoints, and PE_AUDIT_FAULT export fault injection). Both are inert without explicit opt-in; recorded in environment.json."
+  ]
+}

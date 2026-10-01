@@ -1,0 +1,28 @@
+# Generated renders, audit evidence, snapshots, and build outputs.
+/artifacts/
+/build*/
+/build_config.log
+/build_log.txt
+
+# Local compilers and downloaded benchmark applications/packages.
+/tools/toolchain/
+/benchmark/python-deps/
+/benchmark/tools/*
+!/benchmark/tools/downloads.json
+
+# RAW inputs can be restored from fixtures/fixtures_manifest.json.
+/fixtures/raw/
+
+# Python caches and local environments.
+__pycache__/
+*.pyc
+*.pyo
+/.venv/
+/venv/
+
+# Local editor settings and credentials.
+/.vs/
+/.idea/
+.env
+.env.*
+!.env.example

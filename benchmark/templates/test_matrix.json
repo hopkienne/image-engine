@@ -1,0 +1,266 @@
+{
+  "matrix_version": "1.0",
+  "status": "NOT_RUN_PLAN_ONLY",
+  "rows": [
+    {
+      "id": "BMQ01",
+      "class": "HARD",
+      "name": "Environment/versions",
+      "expected": "All binaries and actual host locked; unavailable reported",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ02",
+      "class": "HARD",
+      "name": "File licensing",
+      "expected": "Each selected file has usable license evidence; unknown excluded",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ03",
+      "class": "HARD",
+      "name": "Download/integrity",
+      "expected": "Stream quotas, hashes, safe paths and resume work",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ04",
+      "class": "HARD",
+      "name": "Corpus/split",
+      "expected": "Unique bytes and scene grouping; selection and holdout frozen",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ05",
+      "class": "HARD",
+      "name": "Three adapters",
+      "expected": "Real full RAW through each executable, actual outputs",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ06",
+      "class": "HARD",
+      "name": "Isolation",
+      "expected": "No user sidecar/config/library contamination",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ07",
+      "class": "HARD",
+      "name": "Config effectiveness",
+      "expected": "Perturb setting and verify measured response; restore baseline",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ08",
+      "class": "HARD",
+      "name": "Lossless measurement",
+      "expected": "Actual precision and data provenance, not JPEG upcast",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ09",
+      "class": "HARD",
+      "name": "Color normalization",
+      "expected": "Verified transform; unknown interpretation blocked",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ10",
+      "class": "HARD",
+      "name": "Geometry",
+      "expected": "Mapping verified or metric NOT_COMPARABLE",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ11",
+      "class": "HARD",
+      "name": "Original immutability",
+      "expected": "Source hash unchanged",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ12",
+      "class": "HARD",
+      "name": "Finite/descriptor",
+      "expected": "Nonfinite rejected; range interpreted by contract",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ13",
+      "class": "HARD",
+      "name": "Reproducibility",
+      "expected": "Same-engine pre-JPEG repeat test with documented tolerance",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ14",
+      "class": "HARD",
+      "name": "Cache invalidation",
+      "expected": "Source/config/build/profile change invalidates result",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ15",
+      "class": "TRIAGE",
+      "name": "Endpoint/luminance",
+      "expected": "Domain/mask/formula correct; warning is not quality failure",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ16",
+      "class": "TRIAGE",
+      "name": "Detail/chroma ROI",
+      "expected": "Matched ROI and metric limitations; native crops reviewable",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ17",
+      "class": "HARD",
+      "name": "Harness synthetic tests",
+      "expected": "All H01-H14 implemented and actually exercised",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ18",
+      "class": "HARD",
+      "name": "Pilot report",
+      "expected": "12 target raws; deficits and all failed cases visible",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ19",
+      "class": "HARD",
+      "name": "Standard/holdout run",
+      "expected": "40 total target; frozen settings, real coverage recorded",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ20",
+      "class": "MEASUREMENT",
+      "name": "Timing/memory",
+      "expected": "Measured conditions/method/n; missing data not zero",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ21",
+      "class": "HARD",
+      "name": "Offline HTML",
+      "expected": "Assets/log links/counts work; no external network needed",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ22",
+      "class": "HARD",
+      "name": "Failure accounting",
+      "expected": "Planned denominator preserved; partial cannot aggregate PASS",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ23",
+      "class": "OPTIONAL",
+      "name": "Blind human review",
+      "expected": "Feedback real, mapping separate; absent = NOT_REVIEWED",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ24",
+      "class": "CONDITIONAL",
+      "name": "Controlled chart accuracy",
+      "expected": "Valid chart/reference required; otherwise NOT_RUN",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ25",
+      "class": "HARD",
+      "name": "Baseline preservation",
+      "expected": "No silent core change; before/after reports separate",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    },
+    {
+      "id": "BMQ26",
+      "class": "HARD",
+      "name": "Release of findings",
+      "expected": "Summary with scope/limits/evidence; no automatic G2 approval",
+      "status": "NOT_RUN",
+      "evidence": [],
+      "owner": null,
+      "notes": null
+    }
+  ]
+}

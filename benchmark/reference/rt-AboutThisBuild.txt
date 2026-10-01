@@ -1,0 +1,20 @@
+Version: 5.13
+Branch: 5.13
+Commit: 192417910
+Commit date: 2026-07-25
+Compiler: cc 16.1.0
+Processor: generic x86
+System: Windows
+Bit depth: 64 bits
+Gtkmm: 3.24.10
+Lensfun: 0.3.4.0
+libjxl: 0.12.0
+Build type: release
+Build flags:  -ffp-contract=off -mtune=generic -O3 -DNDEBUG -Wall -Wuninitialized -Wcast-qual -Wno-deprecated-declarations -Wno-unused-result -Wunused-macros -Werror=unused-label -fno-math-errno -Wno-attributes -Werror=delete-incomplete -ftree-vectorize
+Link flags:  -mtune=generic
+OpenMP support: ON
+MMAP support: ON
+Build OS: MINGW64_NT-10.0-26100 x86_64
+Build date: Sat, 25 Jul 2026 22:58:00 +0000 UTC
+Build epoch: 1785020280
+Build UUID: git-1924179107995b01b73cdc7f4fe91e44fc8227a7

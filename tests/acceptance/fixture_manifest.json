@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "id": "d7000-compressed-12bit",
+      "sha256": "986db2bf9ed08cf095bb94cfbaf02f0e89d123edad28b63c05133e7815749486",
+      "path": "fixtures/raw/D7000_compressed_12bit_NIK_3876.NEF",
+      "camera": "Nikon D7000",
+      "kind": "cameraRaw",
+      "sourceUrl": "https://raw.pixls.us/data/Nikon/D7000/Compressed%2012-bit%20D7000%20NIK_3876.NEF",
+      "license": "CC0-1.0 per raw.pixls.us upload policy (submitters must dedicate files to the public domain)",
+      "verifiedIndependently": "hash recomputed at run start by the runner"
+    },
+    {
+      "id": "d3200-lossless-12bit-stored",
+      "sha256": "91657dd8e9c7a086826683f6d20799685657dd7ca2056702b145851465f57cd3",
+      "path": "fixtures/raw/D3200_DSC_0059.NEF",
+      "camera": "Nikon D3200",
+      "kind": "cameraRaw",
+      "sourceUrl": "https://raw.pixls.us/data/Nikon/D3200/DSC_0059.NEF",
+      "license": "CC0-1.0 per raw.pixls.us upload policy",
+      "verifiedIndependently": "hash recomputed at run start by the runner"
+    },
+    {
+      "id": "olympus-xz10-orientation",
+      "sha256": "a25383acad9b5bb0bb404715e0957f2eb80aa1aaad6c448a71025c03cfa631be",
+      "path": "fixtures/raw/orientation/Olympus_XZ10_P1240016.ORF",
+      "camera": "Olympus XZ-10",
+      "kind": "cameraRaw",
+      "sourceUrl": "https://raw.pixls.us/getfile.php/2431/nice/Olympus%20-%20XZ-10%20-%2012bit%20(4%3A3).ORF",
+      "license": "CC0-1.0 per raw.pixls.us repository record 2431",
+      "verifiedIndependently": "hash checked against upstream SHA-256 and recomputed at run start",
+      "scope": "AUD-018 orientation conformance only; not camera-quality certification",
+      "role": "orientation"
+    }
+  ],
+  "lookPackages": [
+    {
+      "id": "audit-identity-17",
+      "kind": "identity",
+      "dimension": 17,
+      "path": "../RAW_Engine_Independent_Audit_v1/reference/generated_looks_17/identity-17",
+      "manifestSha256": "dc09c0826bf8f76534ac81f0b56afc3af0248b8508f7b59b52225be72fe1f7d1",
+      "assetSha256": "fbdf78eee1dfbb435dd6aeb90b9759e49140c898f641cbb0a1fbe14982a1eb9f",
+      "origin": "provided by RAW_Engine_Independent_Audit_v1 reference package; hashes re-verified at run start"
+    },
+    {
+      "id": "audit-permute-17",
+      "kind": "permute",
+      "dimension": 17,
+      "path": "../RAW_Engine_Independent_Audit_v1/reference/generated_looks_17/permute-17",
+      "manifestSha256": "7d33150472b8573f64eb8f5e94b3f82df871a22ed968598e65229107364ba9f9",
+      "assetSha256": "84c67ba57a7656d91e7a1f2d10543f4b535b97afa089dc89e69c24fc9ca250f6",
+      "origin": "provided by RAW_Engine_Independent_Audit_v1 reference package; hashes re-verified at run start"
+    },
+    {
+      "id": "audit-constant-17",
+      "kind": "constant",
+      "dimension": 17,
+      "path": "../RAW_Engine_Independent_Audit_v1/reference/generated_looks_17/constant-17",
+      "manifestSha256": "79331b947e1eca1f37cd945ab00f8ddce0c191a7daad5d260a1909b31bb0fc7c",
+      "assetSha256": "574f37043aac757a32bb0b6873c5a32d1fc5b160f93782ee5d1c3409a0d00c52",
+      "origin": "provided by RAW_Engine_Independent_Audit_v1 reference package; hashes re-verified at run start"
+    },
+    {
+      "id": "audit-affine-17",
+      "kind": "affine",
+      "dimension": 17,
+      "path": "../RAW_Engine_Independent_Audit_v1/reference/generated_looks_17/affine-17",
+      "manifestSha256": "cae31360e2af8089a9d7543250cbf3ee8a34aea9dbf27eb60e4a26bf7a76fa2a",
+      "assetSha256": "b42ef9ac3085a03569ec133e876bd225d7b2f84ca4ef19f8ff7595e8c844cd1b",
+      "origin": "provided by RAW_Engine_Independent_Audit_v1 reference package; hashes re-verified at run start"
+    },
+    {
+      "id": "audit-multiaffine-17",
+      "kind": "multiaffine",
+      "dimension": 17,
+      "path": "../RAW_Engine_Independent_Audit_v1/reference/generated_looks_17/multiaffine-17",
+      "manifestSha256": "fffa357bf14882dddc4b2241b59ecc02339219780dec37b4a0b684fbd2e45e87",
+      "assetSha256": "9bee8a79e59ceb36df2319135a3a0a2fae18df44217d32243f3b75d195c60fb8",
+      "origin": "provided by RAW_Engine_Independent_Audit_v1 reference package; hashes re-verified at run start"
+    },
+    {
+      "id": "audit-squaregrid-17",
+      "kind": "squaregrid",
+      "dimension": 17,
+      "path": "../RAW_Engine_Independent_Audit_v1/reference/generated_looks_17/squaregrid-17",
+      "manifestSha256": "0caa6dd0e3ff63c81ad004659592b840c4417e981f0bc8a4e8dbd2b557fd951b",
+      "assetSha256": "74a52f3f70e708d8c17a7b9b7cf071e1d277cca65868af72bb0026d7a6e055a9",
+      "origin": "provided by RAW_Engine_Independent_Audit_v1 reference package; hashes re-verified at run start"
+    }
+  ]
+}

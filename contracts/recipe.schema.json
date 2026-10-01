@@ -1,0 +1,391 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Photo recipe v1 - proposal, not an implemented engine",
+  "description": "Structural validation only. See semantic checks in docs/04_engine_contracts.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "recipeId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "kind": {
+          "enum": [
+            "cameraRaw",
+            "linearDng",
+            "proRaw",
+            "renderedImage"
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "sha256",
+        "kind"
+      ]
+    },
+    "execution": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "engineCompatibility": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "pipelineId": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "pipelineVersion": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "developerBuild": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "cameraProfile": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 256
+                },
+                "version": {
+                  "type": "string",
+                  "pattern": "^\\d+\\.\\d+\\.\\d+$"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "required": [
+                "id",
+                "version",
+                "sha256"
+              ]
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      },
+      "required": [
+        "engineCompatibility",
+        "pipelineId",
+        "pipelineVersion",
+        "developerBuild",
+        "cameraProfile"
+      ]
+    },
+    "adjustments": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "exposureEV": {
+          "type": "number",
+          "minimum": -5,
+          "maximum": 5
+        },
+        "whiteBalance": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "mode": {
+              "enum": [
+                "asShot",
+                "custom",
+                "notApplicable"
+              ]
+            },
+            "resolvedCameraMultipliers": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "minItems": 4,
+                  "maxItems": 4,
+                  "items": {
+                    "type": "number",
+                    "exclusiveMinimum": 0,
+                    "maximum": 64
+                  }
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "required": [
+            "mode",
+            "resolvedCameraMultipliers"
+          ]
+        }
+      },
+      "required": [
+        "exposureEV",
+        "whiteBalance"
+      ]
+    },
+    "look": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^\\d+\\.\\d+\\.\\d+$"
+        },
+        "manifestSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      },
+      "required": [
+        "id",
+        "version",
+        "manifestSha256",
+        "amount"
+      ]
+    },
+    "geometry": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "crop": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "left": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "top": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "width": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "height": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            }
+          },
+          "required": [
+            "left",
+            "top",
+            "width",
+            "height"
+          ]
+        },
+        "rotationQuarterTurns": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 3
+        },
+        "flipHorizontal": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "crop",
+        "rotationQuarterTurns",
+        "flipHorizontal"
+      ]
+    },
+    "grain": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "algorithm": {
+          "const": "grain-v1-proposed"
+        },
+        "seed": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 4294967295
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "referenceLongEdge": {
+          "const": 2048
+        }
+      },
+      "required": [
+        "enabled",
+        "algorithm",
+        "seed",
+        "amount",
+        "referenceLongEdge"
+      ]
+    },
+    "output": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "format": {
+          "const": "jpeg"
+        },
+        "colorSpace": {
+          "const": "srgb"
+        },
+        "bitDepth": {
+          "const": 8
+        },
+        "quality": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100
+        },
+        "subsampling": {
+          "enum": [
+            "444",
+            "420"
+          ]
+        },
+        "longEdge": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 64,
+          "maximum": 32768
+        },
+        "metadataPolicy": {
+          "enum": [
+            "strip_location",
+            "minimal"
+          ]
+        }
+      },
+      "required": [
+        "format",
+        "colorSpace",
+        "bitDepth",
+        "quality",
+        "subsampling",
+        "longEdge",
+        "metadataPolicy"
+      ]
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "recipeId",
+    "source",
+    "execution",
+    "adjustments",
+    "look",
+    "geometry",
+    "grain",
+    "output"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "source": {
+            "properties": {
+              "kind": {
+                "const": "renderedImage"
+              }
+            }
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "execution": {
+            "properties": {
+              "cameraProfile": {
+                "type": "null"
+              }
+            }
+          },
+          "adjustments": {
+            "properties": {
+              "whiteBalance": {
+                "properties": {
+                  "mode": {
+                    "const": "notApplicable"
+                  },
+                  "resolvedCameraMultipliers": {
+                    "type": "null"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "adjustments": {
+            "properties": {
+              "whiteBalance": {
+                "properties": {
+                  "mode": {
+                    "enum": [
+                      "asShot",
+                      "custom"
+                    ]
+                  },
+                  "resolvedCameraMultipliers": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

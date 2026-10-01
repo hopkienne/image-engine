@@ -1,0 +1,74 @@
+[Version]
+AppVersion=5.13
+Version=353
+[Exposure]
+Auto=false
+Compensation=0
+Brightness=0
+Contrast=0
+Saturation=0
+Black=0
+HighlightCompr=0
+ShadowCompr=0
+Curve=0;
+Curve2=0;
+ClampOOG=false
+[White Balance]
+Enabled=true
+Setting=Camera
+[Sharpening]
+Enabled=false
+[PostDemosaicSharpening]
+Enabled=false
+[SharpenEdge]
+Enabled=false
+[SharpenMicro]
+Enabled=false
+[Impulse Denoising]
+Enabled=false
+[Directional Pyramid Denoising]
+Enabled=false
+[Shadows & Highlights]
+Enabled=false
+[Vibrance]
+Enabled=false
+[Color appearance]
+Enabled=false
+[Film Simulation]
+Enabled=false
+[LensProfile]
+LcMode=none
+UseDistortion=false
+UseVignette=false
+UseCA=false
+[Distortion]
+Amount=0
+[Chromatic Aberration]
+Red=0
+Blue=0
+[RAW]
+CA=false
+HotDeadPixels=false
+DarkFrame=
+FlatFieldFile=
+[RAW Bayer]
+Method=amaze
+[RAW X-Trans]
+Method=3-pass (best)
+[Crop]
+Enabled=false
+[Resize]
+Enabled=false
+[Color Management]
+InputProfile=(camera)
+WorkingProfile=ProPhoto
+OutputProfile=RTv4_sRGB
+OutputProfileIntent=Relative
+OutputBPC=false
+ApplyLookTable=false
+ApplyBaselineExposureOffset=false
+
+[HLRecovery]
+Enabled=false
+[PostResizeSharpening]
+Enabled=false

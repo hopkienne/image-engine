@@ -1,0 +1,1 @@
+Synthetic identity LUT supplied with this project documentation. You may use, modify and redistribute this generated fixture for development and testing. No third-party film simulation or camera profile is included. No warranty is made about a RAW engine implementation; none is provided here.

@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Internal look package v1 - proposal",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    },
+    "status": {
+      "enum": [
+        "prototype",
+        "approved"
+      ]
+    },
+    "domain": {
+      "const": "srgb-display-v1"
+    },
+    "sourceKinds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "cameraRaw",
+          "linearDng",
+          "proRaw",
+          "renderedImage"
+        ]
+      }
+    },
+    "compatiblePipelines": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 256
+      }
+    },
+    "amountPolicy": {
+      "const": "encoded-domain-linear-blend-v1"
+    },
+    "operator": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "const": "cube3d"
+        },
+        "opVersion": {
+          "const": 1
+        },
+        "asset": {
+          "type": "string",
+          "pattern": "^[A-Za-z0-9_-]+\\.cube$"
+        },
+        "assetSha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "dimension": {
+          "enum": [
+            17,
+            33,
+            65
+          ]
+        },
+        "interpolation": {
+          "const": "trilinear"
+        },
+        "axisOrder": {
+          "const": "red-fastest"
+        },
+        "domainMin": {
+          "const": [
+            0,
+            0,
+            0
+          ]
+        },
+        "domainMax": {
+          "const": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "required": [
+        "type",
+        "opVersion",
+        "asset",
+        "assetSha256",
+        "dimension",
+        "interpolation",
+        "axisOrder",
+        "domainMin",
+        "domainMax"
+      ]
+    },
+    "licenseFile": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+$"
+    },
+    "notes": {
+      "type": "string",
+      "maxLength": 2000
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "id",
+    "version",
+    "name",
+    "status",
+    "domain",
+    "sourceKinds",
+    "compatiblePipelines",
+    "amountPolicy",
+    "operator",
+    "licenseFile",
+    "notes"
+  ]
+}

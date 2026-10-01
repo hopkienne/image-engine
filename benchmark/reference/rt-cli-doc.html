@@ -1,0 +1,73 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>RawPedia - Command-Line Options</title><meta name=description content><meta name=viewport content="width=device-width,initial-scale=1"><link rel=favicon.ico rel=icon type=image/ico><link rel=stylesheet href=/css/style.min.bc849ef23c5bc3b792e0f4ffafa4d4c52c9f86c54ee43364fcfce6102b7cdbe5.css integrity="sha256-vISe8jxbw7eS4PT/r6TUxSyfhsVO5DNk/PzmECt82+U=" crossorigin=anonymous></head><body><nav class="navbar navbar-expand-lg navbar-light bg-light"><div class=container-fluid><a class=navbar-brand href=https://rawpedia.pixls.us/ rel=home title=RawPedia><img src=https://rawpedia.pixls.us/images/rt-logo-wheel.svg height=30 class=me-1>
+RawPedia
+</a><button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav me-auto"><li class=nav-item><a class=nav-link href=/getting_started/><span>Getting Started</span>
+<span class=visually-hidden>(Current)</span></a><li class=nav-item><a class=nav-link href=/editor/#eek-my-raw-photo-looks-different-than-the-camera-jpeg><span>Eek! That's not my JPEG!</span>
+<span class=visually-hidden>(Current)</span></a><li class=nav-item><a class=nav-link href=/favorites_tab><span>The Favorites Tab</span>
+<span class=visually-hidden>(Current)</span></a><li class=nav-item><a class=nav-link href=/adding_support_for_new_raw_formats><span>New Raw Formats</span>
+<span class=visually-hidden>(Current)</span></a></li></ul></div></div></nav><main role=main class=container><div class="row page justify-content-center mt-3 mt-lg-5"><article class="command-line-options-page col-lg-8"><h1 class=title>Command-Line Options</h1><button class='btn btn-sm btn-outline-primary' type=button data-bs-toggle=collapse data-bs-target=#toc role=button aria-expanded=false aria-controls=toc>Table of Contents</button><div class='collapse border rounded bg-light' id=toc><nav id=TableOfContents><ul><li><a href=#explanation>Explanation</a><ul><li><a href=#rawtherapee-gui>RawTherapee GUI</a></li><li><a href=#rawtherapee-cli>RawTherapee CLI</a></li></ul></li><li><a href=#redirect-output>Redirect Output</a></li><li><a href=#examples>Examples</a><ul><li><a href=#example-1>Example 1</a></li><li><a href=#example-2>Example 2</a></li><li><a href=#example-3>Example 3</a></li></ul></li></ul></nav></div><div class=mb-3></div><h2 id=explanation><a href=#explanation>Explanation</a></h2><p><code>&lt;Chevrons></code> indicate parameters you can change.</p><p><code>[Square brackets]</code> mean the parameter is not mandatory.</p><p>The pipe symbol <code>|</code> indicates a choice of one or the other.</p><p>The dash symbol <code>-</code> denotes a range of possible values from one to the
+other.</p><p>Since RawTherapee 5.1, two executables are provided.</p><h3 id=rawtherapee-gui><a href=#rawtherapee-gui>RawTherapee GUI</a></h3><p>Use this application to start the version with graphical user interface.</p><p>Usage:</p><p><code>rawtherapee &lt;selected dir></code></p><p>Start <a href=/file_browser/>File Browser</a> inside folder.</p><p><code>rawtherapee &lt;file></code></p><p>Start <a href=/editor/>Image Editor</a> with file.</p><p><code>-w</code></p><p>Do not open the Windows console. This option is available in Windows
+only. If you pass parameters to the RawTherapee executable it spawns a
+console window so that you can see the verbose output of your
+processing. Normally Windows closes this console directly after
+RawTherapee is terminated. To let you see the output we added a prompt
+which waits for you to hit a key before closing the console. By
+specifying <code>-w</code> no console will be opened and therefore no key press is
+needed. Useful if you want to invoke <code>rawtherapee.exe</code> in batch, e.g.
+from a PowerShell script. Please note that <code>-w</code> will have no effect for
+&ldquo;Debug&rdquo; builds where a console window will be opened unless you&rsquo;re
+starting RawTherapee from a console window already.</p><p><code>-v</code></p><p>Print the RawTherapee version number and exit.</p><p><code>-R</code></p><p>&ldquo;Remote&rdquo; mode, available since RawTherapee 5.2. When opening an image
+using &ldquo;Open with&rdquo; or by passing its filename as an argument, without
+using the <code>-R</code> option RawTherapee will open in &ldquo;no-File-Browser&rdquo; mode -
+that is a mode which lacks the File Browser and Queue tabs as well as
+the Preferences button. Using the new <code>-R</code> mode, RawTherapee will open
+in a full-fledged instance. Using <code>-R</code> also allows you to open an image
+in an already-running instance of RawTherapee, if that instance was also
+started using <code>-R</code>. The no-File-Browser mode exists for historical
+reasons when RAM requirements were higher and stability was worse. Now
+that RawTherapee&rsquo;s memory usage is optimized and it can quickly and
+reliably open folders with thousands of images, users may prefer using
+the <code>-R</code> mode by default.</p><p><code>-h -?</code></p><p>Display these commands.</p><h3 id=rawtherapee-cli><a href=#rawtherapee-cli>RawTherapee CLI</a></h3><p>Use this application to start the command line only version. You&rsquo;ll find
+all command line options to develop your photos without any graphical
+user interface.</p><p>Usage:</p><p><code>rawtherapee-cli &lt;options> -c &lt;dir>|&lt;files></code></p><p>Convert files in batch with default parameters if no <options>specified.</p><p><code>-w</code></p><p>Do not open the Windows console. This option is available in Windows
+only. If you pass parameters to the RawTherapee executable it spawns a
+console window so that you can see the verbose output of your
+processing. Normally Windows closes this console directly after
+RawTherapee is terminated. To let you see the output we added a prompt
+which waits for you to hit a key before closing the console. By
+specifying <code>-w</code> no console will be opened and therefore no key press is
+needed. Useful if you want to invoke <code>rawtherapee-cli.exe</code> in batch,
+e.g. from a PowerShell script.</p><p>Other options used with <code>-c</code>:</p><p><code>rawtherapee-cli [-o &lt;output>| -O &lt;output> ] [-q] [-a] [-s|-S] [-p &lt;files>] [-d] [-j[1-100] [-js&lt;1-3>]|[-b&lt;8|16>] &lt;[-t[z] | [-n]]] [-Y] [-f] -c &lt;input></code></p><p><code>-c &lt;files></code></p><p>Specify one or more input files or folders.</p><p>When specifying folders, RawTherapee will look for image files which
+comply with the selected parsed extensions (see the <code>-a</code> option).</p><p>The <code>-c</code> option must always be the last one.</p><p><code>-o &lt;file>|&lt;dir></code></p><p>Select output file or folder.</p><p>Saves output file alongside input file if -o is not specified.</p><p><code>-O &lt;file>|&lt;dir></code></p><p>Select output file or folder and copy PP3 file into it.</p><p>Saves output file alongside input file if -O is not specified.</p><p><code>-q &lt;file>|&lt;dir></code></p><p>Quick-start mode. Does not load cached files to speedup start time.</p><p><code>-a &lt;file>|&lt;dir></code></p><p>Process all supported image file types when specifying a folder, even
+those not currently selected in Preferences > File Browser > Parsed
+Extensions.</p><p><code>-s</code></p><p>Use the existing sidecar file to build the processing parameters, e.g.
+for photo.raw there should be a photo.raw.pp3 file in the same folder.
+If the sidecar file does not exist, neutral values will be used.</p><p><code>-S</code></p><p>Like <code>-s</code> but skip if the sidecar file does not exist.</p><p><code>-p &lt;file.pp3></code></p><p>Specify processing profile to be used for all conversions. You can
+specify as many sets of &ldquo;-p &lt;file.pp3>&rdquo; options as you like, each will
+be built on top of the previous one, as explained below.</p><p><code>-d</code></p><p>Use the default raw or non-raw PP3 file as set in
+<a href=/>Preferences</a> > <a href=/image_processing_tab/>Image Processing</a> > <a href=/image_processing_tab/#default-processing-profile>Default Processing Profile</a></p><p><code>-j[1-100]</code></p><p>Specify output to be JPEG (default, if -t and -n are not set).<br>Optionally, specify compression 1-100 (default value: 92).</p><p><code>-js&lt;1-3></code></p><p>Specify the JPEG <a href=http://en.wikipedia.org/wiki/Chroma_subsampling>chroma subsampling</a> parameter,
+where:</p><ul><li><p>1 = Best compression: 2x2, 1x1, 1x1 (4:2:0)<br>Chroma halved vertically and horizontally.</p></li><li><p>2 = Balanced: 2x1, 1x1, 1x1 (4:2:2)<br>Chroma halved horizontally.</p></li><li><p>3 = Best quality: 1x1, 1x1, 1x1 (4:4:4)<br>No chroma subsampling.</p></li></ul><p><code>-b&lt;8|16></code></p><p>Specify bit depth per channel (16 by default).<br>Only applies to TIFF and PNG output, JPEG is always 8.</p><p><code>-t[z]</code></p><p>Specify output to be TIFF (16-bit if <code>-b8</code> is not set).<br>Uncompressed by default, or ZIP compression with &lsquo;z&rsquo;.</p><p><code>-n</code></p><p>Specify output to be compressed PNG (16-bit if <code>-b8</code> is not set).<br>Compression is hard-coded to level 6.</p><p><code>-Y</code></p><p>Overwrite output if present.</p><p><code>-f</code></p><p>Use the custom fast-export processing pipeline.</p><p>Your PP3 files can be incomplete, RawTherapee will set the values as
+follows:</p><ol><li>A new processing profile is created using neutral values,</li><li>If the <code>-d</code> option is set, the values are overridden by those found
+in the default raw or non-raw processing profile,</li><li>If one or more <code>-p</code> options are set, the values are overridden by
+those found in these processing profiles,</li><li>If the <code>-s</code> or <code>-S</code> options are set, the values are finally
+overridden by those found in the sidecar files.</li></ol><p>The processing profiles are processed in the order specified on the
+command line.</p><h2 id=redirect-output><a href=#redirect-output>Redirect Output</a></h2><p>To redirect RawTherapee&rsquo;s output to a text file, you have to start it
+from a console and append the redirection code as follows:</p><p>Windows (cmd.exe)<br><code>rawtherapee.exe > rtlog.txt 2>&amp;1</code></p><p>Linux<br><code>rawtherapee &> rtlog.txt</code></p><h2 id=examples><a href=#examples>Examples</a></h2><h3 id=example-1><a href=#example-1>Example 1</a></h3><p>In Linux, process a single raw which resides in /tmp and is called
+&ldquo;photo.raw&rdquo;, use its sidecar file &ldquo;photo.raw.pp3&rdquo; during conversion,
+save it in the same folder as &ldquo;foo.tif&rdquo;, and overwrite the file
+&ldquo;foo.tif&rdquo; if it exists:</p><p><code>rawtherapee-cli -o /tmp/foo.tif -s -t -Y -c /tmp/photo.raw</code></p><h3 id=example-2><a href=#example-2>Example 2</a></h3><p>In the next example, we&rsquo;ll assume that you want to quickly process all
+your raw photos from the /tmp/jane01 folder to a web sub-folder by using
+the default profile as a basis, using the sidecar profile if it exist,
+but with removing some Exif tags (e.g. the camera&rsquo;s serial number) and
+adding some IPTC tags (e.g. your usual copyright parameters), plus
+resize and sharpen the image for the web (spread over multiple lines for
+clarity):</p><p><code>rawtherapee-cli -o /tmp/Jane01/web -p ~/profiles/iptc.pp3 -s -p ~/profiles/exif.pp3 -p ~/profiles/web.pp3 -t -Y -d -c /tmp/Jane01/</code></p><p>The processing profile will be built as follows:</p><ol><li>A new profile is created using internal default values (hard-coded
+into RawTherapee),</li><li>then overridden by those from the default raw profile (<code>-d</code>),</li><li>then overridden by those found in iptc.pp3,</li><li>then overridden by those found in the sidecar file (<code>-s</code>) if it
+exists, so you can force some IPTC tags even if already set by
+iptc.pp3,</li><li>then overridden by those found in exif.pp3, so you can force the
+profile to erase some tags,</li><li>then overridden by those found in web.pp3, to resize and sharpen the
+image, and make sure that the output colorspace is sRGB.</li></ol><p>As you can see, the position of the <code>-s</code> switch tells when to load the
+sidecar profile relative to the other <code>-p</code> parameters. That is not the
+case for the <code>-d</code> switch.</p><h3 id=example-3><a href=#example-3>Example 3</a></h3><p>In the third example, we will see how long it takes to process every raw
+file in a folder, assuming that each raw photo has a corresponding
+processing profile, and discard each output file:</p><p><code>time { for f in /home/user/photos/2011-11-11/*.raw; do rawtherapee-cli -o /dev/null -S -t -Y -c "$f"; done }</code></p><div class='border-top border-bottom py-1 mt-5 text-secondary'><strong>Last modified: February 10, 2026</strong> (commit <a href=https://github.com/RawTherapee/RawPedia/commit/42aa434f099210dc695c75f317b80a8cde252508 title="View the commit 42aa434">42aa434</a>)</div><div class='mt-4 mb-5'><h4>Translations</h4><ul><li><a href=https://rawpedia.pixls.us/fr/command-line_options/>fr: Options en ligne de commande</a></li></ul></div></article></div><footer><p>&copy; Copyright 2026 Someone or something</p></footer></main><script src=https://rawpedia.pixls.us/js/bootstrap.bundle.min.js></script><script src=https://rawpedia.pixls.us/js/lunr.js></script><script src=https://rawpedia.pixls.us/js/app.js></script></body></html>

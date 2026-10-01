@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "note": "Pinned dependencies for G1. All source tarballs were downloaded once, sha256-recorded here, extracted from these exact archives, and built from those sources. No 'latest' branches, no uncontrolled downloads.",
+  "toolchain": {
+    "name": "WinLibs MinGW-w64 (portable, extracted locally; no system change)",
+    "gcc": "16.2.0 (posix-seh, UCRT)",
+    "release": "16.2.0posix-14.0.0-ucrt-r2",
+    "url": "https://github.com/brechtsanders/winlibs_mingw/releases/download/16.2.0posix-14.0.0-ucrt-r2/winlibs-x86_64-posix-seh-gcc-16.2.0-mingw-w64ucrt-14.0.0-r2.zip",
+    "sha256": "d5dbafc4a170e762ca6143151ec918fb9e2c72736fb14cd704abebc6bdd5276a",
+    "license": "GPL-3.0-or-later with runtime exceptions (GCC runtime libraries); MinGW-w64 runtime per its bundled licenses",
+    "rationale": "Host had no usable C++ toolchain (MSVC 2022/2019 installs exist but lack cl.exe and Windows SDK). A portable MinGW keeps the host clean and the build reproducible."
+  },
+  "buildTools": {
+    "cmake": "4.4.3 (pip wheel)",
+    "ninja": "1.13.2 (pip wheel)"
+  },
+  "dependencies": [
+    {
+      "id": "LibRaw",
+      "version": "0.22.2",
+      "url": "https://github.com/LibRaw/LibRaw/archive/refs/tags/0.22.2.tar.gz",
+      "sha256": "627928088300ecde6ca91ffd202e189203f04ad61ad12f0fe9dc57b9a7a0fb3c",
+      "license": "LGPL-2.1-only OR CDDL-1.0 (per upstream LICENSE.LGPL / LICENSE.CDDL)",
+      "role": "RAW decoding + P0 baseline postprocessing behind RawDecoderAdapter (ADR-0002, Proposed)",
+      "rationale": "Latest stable upstream tag at pin time (2026-09-30); release tag, not a snapshot. Technical choice only; distribution/licensing model remains a legal review item (docs/09 section 9.4)."
+    },
+    {
+      "id": "zlib",
+      "version": "1.3.2",
+      "url": "https://github.com/madler/zlib/archive/refs/tags/v1.3.2.tar.gz",
+      "sha256": "b99a0b86c0ba9360ec7e78c4f1e43b1cbdf1e6936c8fa0f6835c0cd694a495a1",
+      "license": "Zlib license",
+      "role": "Deflate support required by LibRaw for some RAW containers (e.g. deflate-compressed DNG).",
+      "rationale": "Latest stable tag at pin time."
+    },
+    {
+      "id": "libjpeg-turbo",
+      "version": "3.2.0",
+      "url": "https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.2.0.tar.gz",
+      "sha256": "980dd81f425082aa6d7c9e47fef27554ce7a9ffc8e2f6e863b97d263c5c50858",
+      "license": "IJG (BSD-style) + BSD-3-Clause; see upstream LICENSE.md",
+      "role": "JPEG encoding for export (quality + 4:4:4/4:2:0 control, ICC APP2 embedding) and JPEG-compressed RAW container support inside LibRaw.",
+      "rationale": "Latest stable tag at pin time; SIMD disabled in our build for a deterministic toolchain-free build, which is a performance trade-off documented in the G1 report."
+    },
+    {
+      "id": "nlohmann/json",
+      "version": "3.12.0",
+      "url": "https://github.com/nlohmann/json/releases/download/v3.12.0/json.hpp",
+      "sha256": "aaf127c04cb31c406e5b04a63f1ae89369fccde6d8fa7cdda1ed4f32dfc5de63",
+      "license": "MIT",
+      "role": "JSON value model + SAX parser used behind a strict wrapper (duplicate keys, depth, non-finite rejected).",
+      "rationale": "Single header, deterministic pinned download."
+    },
+    {
+      "id": "doctest",
+      "version": "2.5.3",
+      "url": "https://raw.githubusercontent.com/doctest/doctest/v2.5.3/doctest/doctest.h",
+      "sha256": "cfd518a3ef90f67e1f3ba514df23fb3627437de1a2feeba78cf5062a40021421",
+      "license": "MIT",
+      "role": "Unit test framework (test tooling only; not part of the product pipeline).",
+      "rationale": "Single header, pinned tag.",
+      "auditCorrection": {
+        "date": "2026-09-30",
+        "previousManifestSha256": "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5",
+        "reason": "Vendored header is byte-identical to fetched upstream v2.5.3 header; previous manifest entry did not match either file. Header bytes were not changed."
+      }
+    }
+  ],
+  "inHouse": [
+    {
+      "id": "sha256",
+      "role": "SHA-256 (FIPS 180-4) implemented in-engine for source/asset hashing.",
+      "rationale": "Avoids pulling a crypto dependency for one algorithm; validated against standard test vectors in unit tests."
+    },
+    {
+      "id": "icc-srgb-profile",
+      "role": "Deterministic sRGB ICC v2 matrix/TRC profile generated in-engine.",
+      "rationale": "Avoids shipping a third-party profile (provenance/licensing simplicity); parse-checked with Pillow's ImageCms in tooling tests."
+    }
+  ]
+}

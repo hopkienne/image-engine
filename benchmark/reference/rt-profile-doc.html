@@ -1,0 +1,147 @@
+<!doctype html><html lang=en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="ie=edge"><title>RawPedia - Sidecar Files - Processing Profiles</title><meta name=description content><meta name=viewport content="width=device-width,initial-scale=1"><link rel=favicon.ico rel=icon type=image/ico><link rel=stylesheet href=/css/style.min.bc849ef23c5bc3b792e0f4ffafa4d4c52c9f86c54ee43364fcfce6102b7cdbe5.css integrity="sha256-vISe8jxbw7eS4PT/r6TUxSyfhsVO5DNk/PzmECt82+U=" crossorigin=anonymous></head><body><nav class="navbar navbar-expand-lg navbar-light bg-light"><div class=container-fluid><a class=navbar-brand href=https://rawpedia.pixls.us/ rel=home title=RawPedia><img src=https://rawpedia.pixls.us/images/rt-logo-wheel.svg height=30 class=me-1>
+RawPedia
+</a><button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse" id=navbarSupportedContent><ul class="navbar-nav me-auto"><li class=nav-item><a class=nav-link href=/getting_started/><span>Getting Started</span>
+<span class=visually-hidden>(Current)</span></a><li class=nav-item><a class=nav-link href=/editor/#eek-my-raw-photo-looks-different-than-the-camera-jpeg><span>Eek! That's not my JPEG!</span>
+<span class=visually-hidden>(Current)</span></a><li class=nav-item><a class=nav-link href=/favorites_tab><span>The Favorites Tab</span>
+<span class=visually-hidden>(Current)</span></a><li class=nav-item><a class=nav-link href=/adding_support_for_new_raw_formats><span>New Raw Formats</span>
+<span class=visually-hidden>(Current)</span></a></li></ul></div></div></nav><main role=main class=container><div class="row page justify-content-center mt-3 mt-lg-5"><article class="sidecar-files-processing-profiles-page col-lg-8"><h1 class=title>Sidecar Files - Processing Profiles</h1><button class='btn btn-sm btn-outline-primary' type=button data-bs-toggle=collapse data-bs-target=#toc role=button aria-expanded=false aria-controls=toc>Table of Contents</button><div class='collapse border rounded bg-light' id=toc><nav id=TableOfContents><ul><li><a href=#introduction>Introduction</a></li><li><a href=#sources>Sources</a></li><li><a href=#saving>Saving</a></li><li><a href=#storage>Storage</a></li><li><a href=#defaults>Defaults</a></li><li><a href=#partial-processing-profiles-and-fill-modes>Partial Processing Profiles and Fill Modes</a></li><li><a href=#creating-your-own-processing-profiles>Creating Your Own Processing Profiles</a></li><li><a href=#compatibility>Compatibility</a></li></ul></nav></div><div class=mb-3></div><h2 id=introduction><a href=#introduction>Introduction</a></h2><p>Processing profiles (with a PP3 extension for version 3 or PP2 for the
+older version 2) are text files which contain all of the tool settings
+which RawTherapee applies to the associated photo. If you are familiar
+with other raw processors, you may know their equivalent as &ldquo;presets&rdquo;.
+They are stored alongside their associated photos, which is why they are
+also called <a href=https://en.wikipedia.org/wiki/Sidecar_file>sidecar files</a>.</p><p>When you open a folder with photos in RawTherapee&rsquo;s File Browser for the
+first time, none of the images will have PP3 sidecar files. The
+thumbnails shown for images which have no processing profile assigned
+(images which have never been opened or edited) are created from the
+JPEG image embedded in each raw file. A processing profile is assigned
+to the image the moment one of these actions are taken:</p><ul><li>You open the photo for <a href=/the_image_editor_tab/>editing</a>.</li><li>You apply a processing profile manually, by using the right-click
+context menu in the <a href=/the_file_browser_tab/>File Browser</a> or
+<a href=/the_image_editor_tab/#the_filmstrip>Filmstrip</a>.</li><li>You apply a <a href=/dynamic_processing_profiles/>dynamic processing profile</a>.</li></ul><p>When you open an image for editing, or when a processing profile is
+assigned, RawTherapee will convert the real raw data into a viewable
+image. In order to do this, there are many settings which need to be set
+to <em>something</em>, and what these specific values are depends on:</p><ul><li>Your <a href=/preferences/#default_processing_profile>default processing profile</a>.</li><li>Your <a href=/dynamic_processing_profiles/>dynamic processing profile rules</a>, if any.</li><li>Or on the processing profile you selected from the right-click context
+menu if you right-clicked on a thumbnail.</li></ul><h2 id=sources><a href=#sources>Sources</a></h2><p>Processing profiles come from three quite different sources, though they
+work in exactly the same way:</p><ul><li><p>&ldquo;Bundled profiles&rdquo;.</p><p>RawTherapee comes with a bundle of profiles. Their purpose is to give
+you a good starting point, to demonstrate how the tools can be used
+together. They are the ones you see in the <a href=/the_image_editor_tab/#processing_profile_selector>Processing Profile Selector</a>
+drop-down list&rsquo;s &ldquo;Bundled profiles&rdquo; section, in the <a href=/the_image_editor_tab/>Image Editor</a>.</p></li><li><p>&ldquo;My profiles&rdquo;.</p><p>When you make a processing profile which you want to re-use, for
+example one which works well with your camera and your style, you can
+save it so that it also appears in the Processing Profile Selector
+drop-down list, in the &ldquo;My profiles&rdquo; section. To have it appear there,
+save it to the &ldquo;profiles&rdquo; folder within the &ldquo;config&rdquo; folder - see the
+<a href=/file_paths/>File Paths</a> article to find it.</p></li><li><p>Automatically generated profiles.</p><p>Whenever you edit an image, the tool settings you want applied to that
+image are stored in a processing profile that is particular to that
+image (ranking information, the history panel contents and snapshots
+are not stored in these files yet, see <a href="https://code.google.com/p/rawtherapee/issues/detail?id=473">issue #473</a>).</p></li></ul><h2 id=saving><a href=#saving>Saving</a></h2><p>As simply viewing the image requires processing, RawTherapee stores the
+settings it used to show you the image in a sidecar processing profile.
+That processing profile also stores all the tool tweaks you made in the
+Editor tab.</p><p>The processing profile is written to disk:</p><ul><li>When you apply a processing profile manually or using a dynamic
+profile.</li><li>When you close the current image (the Editor tab) if using
+<a href=/the_image_editor_tab/#editor_tab_modes>Multiple Editor Tabs Mode</a>
+(METM).</li><li>When you close the current image by opening a different image if using
+<a href=/the_image_editor_tab/#editor_tab_modes>Single Editor Tab Mode</a> (SETM).</li><li>When you close the current image by closing RawTherapee.</li><li>When you manually save the processing profile using the <a href=/the_image_editor_tab/#processing_profile_selector>Processing Profile Selector</a>
+panel in the Editor tab.</li><li>When you use the &ldquo;force saving current settings to the processing
+profile&rdquo; <a href=/keyboard_shortcuts/>keyboard shortcut</a> from the
+Editor tab.</li></ul><p>If a photo has an associated processing profile, a green check mark will
+appear over its thumbnail.</p><p>If you have a photo opened in an Editor tab and you make changes to it
+from the File Browser, the changes are reflected immediately in the
+Editor tab.</p><h2 id=storage><a href=#storage>Storage</a></h2><p>Where the processing profile is stored can be configured in <a href=/preferences/#processing_profile_handling>Preferences > Processing Profile Handling</a>.</p><p>By default, the processing profile for an image is stored alongside the
+input image (if you open <code>kitty.raw</code>, a new file <code>kitty.raw.pp3</code> will be
+created next to it), but they can also be stored in a <a href=/file_paths/>central cache</a>. You can choose whether RawTherapee should
+use the cache, write the processing profile alongside the image, or
+both, from &ldquo;<em>Preferences > Image Processing</em>&rdquo;. We suggest you store
+these files alongside your input image files so that if you decide to
+move the images you can move the processing profiles easily along with
+them.</p><p>When saving an image you have the option of ticking the &ldquo;Save processing
+parameters with image&rdquo; checkbox. If it is ticked, and if you are working
+on <code>kitty.raw</code> and saving to a JPG file, then the processing profile
+used to develop that image will be stored in a file called
+<code>kitty.jpg.out.pp3</code>. The &ldquo;.out&rdquo; part if there so that conflicts do not
+occur if you are working on a non-raw file.</p><h2 id=defaults><a href=#defaults>Defaults</a></h2><p>The default processing profile used when opening <strong>non-raw</strong> images is
+called &ldquo;Neutral&rdquo;. This profile has all tool
+settings at their neutral values, so they have no effect. Since non-raw
+images usually have already been processed and are ready for viewing,
+having RawTherapee not introduce any tweaks by default is the desirable
+behavior.</p><p>The default profile for <strong>raw</strong> photos is called &ldquo;<a href=auto-matched_curve>Auto-Matched Curve</a>&rdquo; (from RawTherapee 5.4 onward).
+This profile makes your raw image look like the out-of-camera JPEG,
+which is usually a desirable starting point.</p><p>Furthermore, most tools in the Editor tab have a reset button.</p><ul><li>Clicking the reset button resets the tool to its hard-coded neutral
+value, usually zero.</li><li>Ctrl+clicking the reset button resets the tool to whatever value it
+had when you opened the image, i.e. the way it was if you rewind the
+history stack to the top.</li></ul><h2 id=partial-processing-profiles-and-fill-modes><a href=#partial-processing-profiles-and-fill-modes>Partial Processing Profiles and Fill Modes</a></h2><p><img src=processing-profiles-selector.png alt></p><figcaption>Processing-profiles-selector.png</figcaption><p>Processing profile storage (saving to a file or copying to memory) and
+application (loading from a file or pasting from memory) can be partial,
+where only a subset of the parameters are involved, or full, involving
+all parameters. These operations are performed using the buttons in the
+<a href=/editor/#processing_profile_selector>Processing Profile Selector</a> located in the
+top-right corner of the <a href=/editor/>Editor</a> tab. Clicking these
+buttons invokes an operation on the full profile, while +clicking
+invokes an operation only on a subset of parameters. When a partial
+operation is invoked, a windows pops up letting you choose which
+parameters to include. This feature, for instance, allows you to copy
+only the white balance and noise reduction parameters from one image to
+another, while omitting all other parameters.</p><p>The processing profile fill mode allows you to decide what happens when
+you apply (load or paste) a partial processing profile.</p><ul><li><a href=/images/profile-filled.png>image:Profile-filled.png</a> &ldquo;Fill&rdquo;
+mode takes missing values from RawTherapee&rsquo;s hard-coded defaults. For
+instance, if you apply a partial profile containing only sharpening
+settings, all of the remaining tools will be set to their default
+parameters, overwriting any edits you have made.</li><li><a href=/images/profile-partial.png>image:Profile-partial.png</a>
+&ldquo;Preserve&rdquo; mode applies only those parameters that are available in
+the partial profile and leaves missing values unchanged. Using the
+previous example, only the sharpening settings would be applied and
+all other parameters would be left intact.</li></ul><p>Most of the profiles that come bundled with RawTherapee are partial
+profiles. The <a href=/file_paths/>File Paths</a> article explains where
+the processing profiles shown in the drop-down list can be found on your
+file system.</p><h2 id=creating-your-own-processing-profiles><a href=#creating-your-own-processing-profiles>Creating Your Own Processing Profiles</a></h2><p>Using certain tools in certain ways may make your processing profile
+only usable with that specific image. For example if you set a white
+balance, cropping and rotation, you won&rsquo;t get good results if you apply
+that profile to an image taken under different lighting with the camera
+rotated any other way. See the article
+<a href=/creating_processing_profiles_for_general_use/>Creating processing profiles for general use</a>
+for advice on how to make processing profiles which can be used on many
+images.</p><h2 id=compatibility><a href=#compatibility>Compatibility</a></h2><p>Processing profiles evolve from one version of RawTherapee to the next.
+We strive to ensure backward compatibility (e.g. a profile created in
+5.3 and opened in 5.4 should look the same), but this is not always
+possible.</p><p>Processing profiles can gain new parameters or lose ones which became
+obsolete. Tool behavior can also evolve, wherein default values change
+or in extreme cases the meaning of a value is interpreted differently;
+an example of this is the noise reduction tool, where a luminance noise
+reduction value of 10 in RawTherapee-3.0 would lead to a different
+result in RawTherapee-4.0.10 as the whole noise reduction engine has
+been greatly improved.</p><p>Consolidating processing profiles into a cache allows one to store
+isolated copies of the processing profiles per specific version of
+RawTherapee. In such a case, the cache can be used to re-process photos
+in order to get the same output as originally intended (but e.g. with a
+new size or output color space) using the same version of RawTherapee in
+which the image was originally edited. Whether this is desirable is
+debatable. Consider that you want to squeeze as much out of your raw
+files as possible. If two years later you want to go back to an old raw
+file, perhaps getting the same result as you did two years ago is not
+the best idea, because RawTherapee&rsquo;s capabilities would have greatly
+improved in that time, you may have acquired a better monitor, and your
+taste and skill would also have evolved. Nevertheless, by backing up the
+whole cache folder, when installing a new version of RawTherapee you
+retain the option of going back to an older version of RawTherapee in
+order to get the exact same result.</p><p>The <a href=/file_paths/>File Paths</a> article describes where you can
+find the &ldquo;<em>cache</em>&rdquo; and &ldquo;<em>config</em>&rdquo; folders on your system.</p><p>When releasing a major new version of RawTherapee, it may happen that we
+use a new suffix for the &ldquo;<em>cache</em>&rdquo; and &ldquo;<em>config</em>&rdquo; folders. This means
+that the new version of RawTherapee will not see your old configuration
+or processing profiles. Though this sounds undesirable, there are good
+reasons we may (rarely) choose to do that.</p><ul><li>Backward compatibility. There may be changes in behavior between old
+and new versions of a specific tool. For instance, the effects of the
+Auto Levels tool have changed (for the better) between versions 4.0.11
+and 4.0.12, so if your old processing profiles had it enabled, the
+results in 4.0.12 will be a little different and may require tuning
+your old profiles.</li><li>Some users have not checked &ldquo;<a href=/preferences/>Preferences</a>&rdquo; in
+a long time, and their program is tuned for what worked best long ago,
+not for what works best now. Our defaults are good defaults, we keep
+them up to date to make RawTherapee look and function well
+out-of-the-box, so sometimes having RawTherapee start with fresh
+defaults is a good thing, and it will motivate users to look into
+&ldquo;<a href=/preferences/>Preferences</a>&rdquo; again.</li><li>Some users have never looked inside
+&ldquo;<a href=/preferences/>Preferences</a>&rdquo; in the first place, and are
+unaware of some of the features that can be unlocked there. As above,
+fresh defaults will activate these things.</li><li>Some old cache and config files can cause RawTherapee to crash. While
+we patch the specific cases made known to us, it is safe to assume
+there will always be cases unknown to us which will still cause
+instability. Starting with clean cache and config folders mitigates
+this problem.</li></ul><div class='border-top border-bottom py-1 mt-5 text-secondary'><strong>Last modified: March 1, 2026</strong> (commit <a href=https://github.com/RawTherapee/RawPedia/commit/08e3ef004cc7a99fa1cbd5d94c2adf8058856ff1 title="View the commit 08e3ef0">08e3ef0</a>)</div><div class='mt-4 mb-5'><h4>Translations</h4><ul><li><a href=https://rawpedia.pixls.us/fr/sidecar_files_-_processing_profiles/>fr: Sidecar Files - Processing Profiles</a></li></ul></div></article></div><footer><p>&copy; Copyright 2026 Someone or something</p></footer></main><script src=https://rawpedia.pixls.us/js/bootstrap.bundle.min.js></script><script src=https://rawpedia.pixls.us/js/lunr.js></script><script src=https://rawpedia.pixls.us/js/app.js></script></body></html>

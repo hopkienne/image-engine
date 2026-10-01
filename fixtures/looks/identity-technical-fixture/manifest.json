@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "identity-technical-fixture",
+  "version": "1.0.0",
+  "name": "Identity - technical fixture",
+  "status": "prototype",
+  "domain": "srgb-display-v1",
+  "sourceKinds": [
+    "cameraRaw",
+    "linearDng",
+    "proRaw",
+    "renderedImage"
+  ],
+  "compatiblePipelines": [
+    "baseline-v0"
+  ],
+  "amountPolicy": "encoded-domain-linear-blend-v1",
+  "operator": {
+    "type": "cube3d",
+    "opVersion": 1,
+    "asset": "color.cube",
+    "assetSha256": "985c3ec26e02ae5cb3d2e6b55ac79d0102a0281029c1f34f6a8b3fda1a109e07",
+    "dimension": 17,
+    "interpolation": "trilinear",
+    "axisOrder": "red-fastest",
+    "domainMin": [
+      0,
+      0,
+      0
+    ],
+    "domainMax": [
+      1,
+      1,
+      1
+    ]
+  },
+  "licenseFile": "LICENSE.txt",
+  "notes": "Tài sản tổng hợp do bộ tài liệu tạo, chỉ để kiểm thử LUT identity. Không phải preset màu thẩm mỹ; không có chữ ký production."
+}

@@ -1,0 +1,1259 @@
+{
+  "schemaVersion": 1,
+  "planId": "G1-INDEPENDENT-AUDIT-v1",
+  "policyApprovalStatus": "PROPOSED",
+  "enginePassClaim": false,
+  "conclusion": "INCOMPLETE (required evidence remains BLOCKED/NOT_RUN)",
+  "cases": [
+    {
+      "caseId": "AUD-001",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 3,
+      "variants": [
+        {
+          "variant": "clean-build",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        },
+        {
+          "variant": "old-suite",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        },
+        {
+          "variant": "ctest",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-002",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 9,
+      "variants": [
+        {
+          "variant": "identical-pair-PASS",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "nan-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "inf-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "truncation-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "one-pixel-delta-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "channel-swap-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "endian-swap-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "wrapper-shape-authority-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "wrapper-stride-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-003",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 2,
+      "variants": [
+        {
+          "variant": "self-test",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "wrong-expected-FAIL",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-004",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 10,
+      "variants": [
+        {
+          "variant": "d7000-compressed-12bit/identity/a=0.25",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/identity/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/permute/a=0.25",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/permute/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/identity/a=0.25",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/identity/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/permute/a=0.25",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/permute/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-005",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 10,
+      "variants": [
+        {
+          "variant": "d7000-compressed-12bit/constant/a=0.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/constant/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/constant/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/constant/a=0.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/constant/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/constant/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/constant-patch",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/constant-patch",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-006",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 12,
+      "variants": [
+        {
+          "variant": "d7000-compressed-12bit/affine/a=0.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/affine/a=0.25",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/affine/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/affine/a=0.75",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/affine/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/affine/a=0.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/affine/a=0.25",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/affine/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/affine/a=0.75",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/affine/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-007",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 6,
+      "variants": [
+        {
+          "variant": "d7000-compressed-12bit/multiaffine/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/multiaffine/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/multiaffine/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/multiaffine/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-008",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 6,
+      "variants": [
+        {
+          "variant": "d7000-compressed-12bit/squaregrid/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/squaregrid/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/squaregrid/a=0.5",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/squaregrid/a=1.0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored/B1-invariance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-009",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 6,
+      "variants": [
+        {
+          "variant": "encoded-hypothesis",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "linear-hypothesis-must-FAIL",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "ev-order-composition",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "exposure-stage",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "affine/decode-output-composition",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "affine-ev/decode-output-composition",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-010",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 4,
+      "variants": [
+        {
+          "variant": "amount0-bypass",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "ev-still-applied",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "amount-1.1-rejected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "amount-NaN-rejected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-011",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 3,
+      "variants": [
+        {
+          "variant": "dimensions-vs-thumbnail",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "unpack-path-provenance",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "source-review",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-012",
+      "status": "NOT_APPLICABLE",
+      "required": false,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "runner",
+          "status": "NOT_APPLICABLE",
+          "reason": "No valid synthetic DNG pair is in scope and the engine does not claim DNG-thumbnail-capability testing; real-camera fixtures are used instead (AUD-011/016). Capability remains unclaimed.",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-013",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 2,
+      "variants": [
+        {
+          "variant": "asShot-equals-custom-same-multipliers",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        },
+        {
+          "variant": "custom-changes-color",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-014",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "scale-invariance-k2",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-015",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 5,
+      "variants": [
+        {
+          "variant": "EV=-2",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "EV=-1",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "EV=+0",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "EV=+1",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "EV=+2",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-016",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "base-checkpoint",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-017",
+      "status": "PASS",
+      "required": false,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "clipping-report",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-018",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 4,
+      "variants": [
+        {
+          "variant": "unit-mapping",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-orientation-harness-fix"
+        },
+        {
+          "variant": "cli-default-as-shot",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-orientation-harness-fix"
+        },
+        {
+          "variant": "e2e-flip-baked",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-orientation-harness-fix"
+        },
+        {
+          "variant": "preview-orientation-parity",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-orientation-harness-fix"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-019",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "crop-rotate-flip",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-020",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "downscale-1/2",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-021",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "preview-export-shared-graph",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-022",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 2,
+      "variants": [
+        {
+          "variant": "A-B-A-same-process",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "asset-change-invalidates",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-023",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 4,
+      "variants": [
+        {
+          "variant": "geometry",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "subsampling-444",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "flat-patch-decode",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "icc-present",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-024",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 5,
+      "variants": [
+        {
+          "variant": "float-xyz-policy-precision",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "semantic-transform",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "wrong-trc-float-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "wrong-trc-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "missing-icc-detected",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-025",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 2,
+      "variants": [
+        {
+          "variant": "hash-immutability",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        },
+        {
+          "variant": "no-partial-leftovers",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-026",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 3,
+      "variants": [
+        {
+          "variant": "write_short",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "write_error",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "flush_error",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-027",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "sentinel-created-mid-render",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-028",
+      "status": "NOT_APPLICABLE",
+      "required": false,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "runner",
+          "status": "NOT_APPLICABLE",
+          "reason": "Engine writes no camera EXIF at all (only JFIF+ICC+minimal EXIF with Orientation/ColorSpace/Software); there is no GPS/serial stripping feature to conformance-test. Documented limitation, not a passed check.",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-029",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 4,
+      "variants": [
+        {
+          "variant": "span-unicode-limits-null",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        },
+        {
+          "variant": "cli-unicode-init",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        },
+        {
+          "variant": "cli-unicode-render",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        },
+        {
+          "variant": "unicode-preview-export-custom-adjustments",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit-regression-final"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-030",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 3,
+      "variants": [
+        {
+          "variant": "malformed-lut-parses",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "manifest-schema",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "recipe-schema",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-031",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 2,
+      "variants": [
+        {
+          "variant": "pre-mid-post-cancel",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "deterministic-cancel-stages",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-032",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "repeated-rounds",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-033",
+      "status": "BLOCKED",
+      "required": true,
+      "variantCount": 3,
+      "variants": [
+        {
+          "variant": "canary-asan",
+          "status": "BLOCKED",
+          "reason": "toolchain has no -lasan runtime",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "canary-ubsan",
+          "status": "BLOCKED",
+          "reason": "toolchain has no -lubsan runtime",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "engine-under-sanitizer",
+          "status": "BLOCKED",
+          "reason": "no sanitizer runtime in the pinned MinGW toolchain; requires MSVC (missing cl.exe on host) or an ASan-capable GCC; _GLIBCXX_ASSERTIONS build is recorded as a partial substitute",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-034",
+      "status": "NOT_RUN",
+      "required": false,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "runner",
+          "status": "NOT_RUN",
+          "reason": "Coverage-guided fuzzing requires a libFuzzer-capable toolchain; current MinGW host has none. Budget also not allocated.",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-035",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "fresh-process-x3",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-036",
+      "status": "NOT_RUN",
+      "required": false,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "runner",
+          "status": "NOT_RUN",
+          "reason": "no implementation registered for this case ID",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-037",
+      "status": "PASS",
+      "required": false,
+      "variantCount": 4,
+      "variants": [
+        {
+          "variant": "d7000-compressed-12bit-full",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d7000-compressed-12bit-2048",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored-full",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "d3200-lossless-12bit-stored-2048",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-038",
+      "status": "NOT_RUN",
+      "required": false,
+      "variantCount": 1,
+      "variants": [
+        {
+          "variant": "runner",
+          "status": "NOT_RUN",
+          "reason": "no implementation registered for this case ID",
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-039",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 16,
+      "variants": [
+        {
+          "variant": "MUT-01/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-02/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-03/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-04/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-05/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-06/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-07/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-08/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-09/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-10/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-11/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-12/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-13/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-14/KILLED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "baseline-restored",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "MUT-15/comparator-nan-skip",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    },
+    {
+      "caseId": "AUD-040",
+      "status": "PASS",
+      "required": true,
+      "variantCount": 11,
+      "variants": [
+        {
+          "variant": "positive",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "missing",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "FAIL",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "BLOCKED",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "NOT_RUN",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "NOT_APPLICABLE",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "UNKNOWN",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "timeout",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "comparator-exception",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "fail-and-missing",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        },
+        {
+          "variant": "junit-escaping",
+          "status": "PASS",
+          "reason": null,
+          "evidenceRun": "G:\\zalo_mini_app\\app\\photo_engine\\artifacts\\engine-improvements\\20261001\\audit"
+        }
+      ]
+    }
+  ]
+}

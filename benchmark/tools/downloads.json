@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://github.com/RawTherapee/RawTherapee/releases/download/5.13/RawTherapee_5.13_win64_x86_64_release.zip",
+    "path": "G:\\zalo_mini_app\\app\\photo_engine\\benchmark\\tools\\RawTherapee_5.13_win64_x86_64_release.zip",
+    "bytes": 121500459,
+    "sha256": "ba29d23f3f12097c925bdab6d80e831a84ed3a88a81ce94606e4dcc796fa87ee",
+    "publisher_digest_verified": true
+  },
+  {
+    "url": "https://github.com/darktable-org/darktable/releases/download/release-5.6.1/darktable-5.6.1-win64.exe",
+    "path": "G:\\zalo_mini_app\\app\\photo_engine\\benchmark\\tools\\darktable-5.6.1-win64.exe",
+    "bytes": 139586523,
+    "sha256": "bb15a8e4d24c21097cfdef0a560920f7fa0c05dec93482448dd538f2be02d6c4",
+    "publisher_digest_verified": true
+  },
+  {
+    "url": "https://github.com/ip7z/7zip/releases/download/26.03/7z2603-x64.exe",
+    "path": "G:\\zalo_mini_app\\app\\photo_engine\\benchmark\\tools\\7z2603-x64.exe",
+    "bytes": 1661239,
+    "sha256": "0859c524b8a63551848f0c246abddcb1d0b7b656b0fbfe879f8d85e61a9e6edd",
+    "publisher_digest_verified": true
+  },
+  {
+    "url": "https://www.7-zip.org/a/7zr.exe",
+    "path": "G:\\zalo_mini_app\\app\\photo_engine\\benchmark\\tools\\7zr.exe",
+    "bytes": 602624,
+    "sha256": "ad4c82fadcbdf93c03b4fc440f300509c7d60c5c2f4d183e35d9d70d6957037d",
+    "publisher_digest_verified": false
+  }
+]

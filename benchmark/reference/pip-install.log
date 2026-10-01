@@ -1,0 +1,13 @@
+Collecting tifffile
+  Downloading tifffile-2026.9.20-py3-none-any.whl.metadata (34 kB)
+Collecting imagecodecs
+  Downloading imagecodecs-2026.8.16-cp312-abi3-win_amd64.whl.metadata (24 kB)
+Downloading tifffile-2026.9.20-py3-none-any.whl (275 kB)
+Downloading imagecodecs-2026.8.16-cp312-abi3-win_amd64.whl (21.3 MB)
+   ---------------------------------------- 21.3/21.3 MB 2.9 MB/s  0:00:07
+Installing collected packages: tifffile, imagecodecs
+
+Successfully installed imagecodecs-2026.8.16 tifffile-2026.9.20
+
+[notice] A new release of pip is available: 25.2 -> 26.2.1
+[notice] To update, run: python.exe -m pip install --upgrade pip
